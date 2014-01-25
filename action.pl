@@ -1,7 +1,7 @@
 use List::MoreUtils 'any';
 
 # high priority account list
-@accounts = {
+my @accounts = {
     'jnoah@osuosl.org',
     'jldugger@osuosl.org',
     'bryon@osuosl.org',
