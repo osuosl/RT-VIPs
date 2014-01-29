@@ -1,10 +1,20 @@
 ###############################
 #Custom Condition:
-# blank
+if (($self->TransactionObj->Type eq "Create")||(($self->TransactionObj->Type eq "Set")&&($self->TransactionObj->Field eq "Queue"))) {
+        return 1;
+    }
+
+    return 0;
+
+
 
 ###############################
 #Custom action preparation code:
 return 1;  #this is important
+
+
+
+
 
 ###############################
 #Custom action cleanup code:
