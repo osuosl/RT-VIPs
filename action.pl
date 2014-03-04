@@ -19,8 +19,10 @@ return 1;  #this is important
 #Custom action cleanup code:
 use List::MoreUtils 'any';
 
-# high priority account list, put VIP email addresses here
-my @accounts = ('');
+# high priority account list
+my $groupobj = RT::Group->new(RT->SystemUser);
+$groupobj->Load(118599); # 11859 is the group id of the VIP group
+my @accounts = split(', ', $groupobj->MemberEmailAddressesAsString());
 
 my $PRIORITY = 10;
 
