@@ -24,7 +24,7 @@ my $groupobj = RT::Group->new(RT->SystemUser);
 $groupobj->Load(118599); # 11859 is the group id of the VIP group
 my @accounts = split(', ', $groupobj->MemberEmailAddressesAsString());
 
-my $PRIORITY = 10;
+my $PRIORITY = 15;
 
 # See if the requestor is in the list of high priority accounts
 my @requestor_addresses = split(', ', $self->TicketObj->RequestorAddresses());
